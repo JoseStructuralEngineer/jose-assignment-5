@@ -16,5 +16,8 @@ public class ExampleApplication {
         for (int i=0; i<myCustomList.getSize(); i++) {
             System.out.println(myCustomList.get(i));
         }
+
+
+
     }
 }

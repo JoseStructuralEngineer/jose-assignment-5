@@ -10,6 +10,7 @@ public class CustomArrayList<T> implements CustomList<T> {
         //Find first null
         Object[] newItemsList;
 
+        //This if statement is what resizes once array is full
         if(items.length == getSize()){
             //Resize array
             newItemsList = new Object[getSize()+10];
