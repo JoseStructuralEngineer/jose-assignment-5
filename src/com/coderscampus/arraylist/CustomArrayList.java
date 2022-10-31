@@ -13,7 +13,7 @@ public class CustomArrayList<T> implements CustomList<T> {
         //This if statement is what resizes once array is full
         if(items.length == size-1){
             //Resize array
-            newItemsList = new Object[size+10];
+            newItemsList = new Object[size+9];
             //copy items in new array
             for(int i = 0;i<items.length;i++){
                 newItemsList[i] = items[i];
@@ -34,7 +34,6 @@ public class CustomArrayList<T> implements CustomList<T> {
     @Override
     public int getSize() {
         //TODO Auto-generated method stub
-        //Always return the size of array when value is not null
         return size;
     }
 

@@ -6,12 +6,12 @@ import java.util.List;
 public class ExampleApplication {
     public static void main(String[] args){
         CustomList<String> myCustomList = new CustomArrayList<>();
-        for(int i = 1 ;i<1001;i++ ){
-            myCustomList.add("element " + (i));
+        for(int i = 0;i<10000;i++ ){
+            myCustomList.add("element " + (i+1));
         }
         System.out.println("This the maximum amount " + myCustomList.getSize());
         System.out.println("Get the value " + myCustomList.getSize());
-        System.out.println("Get the value " + myCustomList.get(2));
+        System.out.println("Get the value " + myCustomList.get(101));
 
 
 
