@@ -2,30 +2,32 @@ package com.coderscampus.arraylist;
 
 public class CustomArrayList<T> implements CustomList<T> {
     Object[] items = new Object[10];
-
+    int size = 0;
     @Override
     public boolean add(T item) {
         //TODO Auto-generated method stub
-        int size = getSize();
+
         //Find first null
         Object[] newItemsList;
-
+        size++;
         //This if statement is what resizes once array is full
-        if(items.length == getSize()){
+        if(items.length == size-1){
             //Resize array
-            newItemsList = new Object[getSize()+10];
+            newItemsList = new Object[size+10];
             //copy items in new array
             for(int i = 0;i<items.length;i++){
                 newItemsList[i] = items[i];
             }
             //add item to next element after null
-            newItemsList[getSize()] = item;
+            newItemsList[size-1] = item;
 
             //items is now new list
             items = newItemsList;
+
             return true;
         }
-        items[size] = item;
+        items[size-1] = item;
+
         return true;
     }
 
@@ -33,16 +35,7 @@ public class CustomArrayList<T> implements CustomList<T> {
     public int getSize() {
         //TODO Auto-generated method stub
         //Always return the size of array when value is not null
-        int index = 0;
-
-        for(Object it :items){
-            if(it == null){
-                return index;
-            } else {
-                index = index + 1;
-            }
-        }
-        return index;
+        return size;
     }
 
     @Override
