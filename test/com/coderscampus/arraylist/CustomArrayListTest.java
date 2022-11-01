@@ -11,9 +11,11 @@ class CustomArrayListTest {
 
         //Arrange
         CustomList<Integer> customList = new CustomArrayList<>();
-
+        for(int i = 0;i<10000;i++ ){
+            customList.add(i+1);
+        }
         //Act
-        customList.add(10);
+
 
 
         //Assert
@@ -21,9 +23,11 @@ class CustomArrayListTest {
         //I expect there to be an Integer with value 10 sorted in the first
         //index in my customelist
 
+        for(int i = 0;i<10000;i++ ){
+            assertEquals(customList.get(0+i),i+1);
+        }
 
-        assertEquals(customList.get(0),10);
-        assertEquals(customList.getSize(),1);
+        assertEquals(customList.getSize(),10000);
         //fail("Not yet implemented");
     }
 

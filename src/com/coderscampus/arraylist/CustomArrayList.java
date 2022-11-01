@@ -1,5 +1,7 @@
 package com.coderscampus.arraylist;
 
+import java.util.Arrays;
+
 public class CustomArrayList<T> implements CustomList<T> {
     Object[] items = new Object[10];
     int size = 0;
@@ -7,27 +9,15 @@ public class CustomArrayList<T> implements CustomList<T> {
     public boolean add(T item) {
         //TODO Auto-generated method stub
 
-        //Find first null
-        Object[] newItemsList;
-        size++;
         //This if statement is what resizes once array is full
-        if(items.length == size-1){
-            //Resize array
-            newItemsList = new Object[size+9];
-            //copy items in new array
-            for(int i = 0;i<items.length;i++){
-                newItemsList[i] = items[i];
-            }
-            //add item to next element after null
-            newItemsList[size-1] = item;
-
+        if(size == items.length){
+            items = Arrays.copyOf(items,size*2);
             //items is now new list
-            items = newItemsList;
-
+            size++;
             return true;
         }
-        items[size-1] = item;
-
+        items[size] = item;
+        size++;
         return true;
     }
 
