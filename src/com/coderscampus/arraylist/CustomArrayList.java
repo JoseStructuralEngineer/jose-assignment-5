@@ -31,6 +31,6 @@ public class CustomArrayList<T> implements CustomList<T> {
     public T get(int index) {
         //TODO Auto-generated method stub
         //Return null if value doesn't exists
-        return ((T) items[index]!=null)?(T) items[index]:null;
+        return (index>=items.length)?null:((T) items[index]!=null)?(T) items[index]:null;
     }
 }
